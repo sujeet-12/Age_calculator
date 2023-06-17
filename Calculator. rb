@@ -1,0 +1,26 @@
+require 'date'
+
+def age_calculator(dob)
+
+  today = Date.today
+
+  age = today.year - dob.year
+
+  if today.month < dob.month || (today.month == dob.month && today.day < dob.day)
+
+    age -= 1
+
+  end
+
+  return age
+
+end
+
+puts "Enter your date of birth (YYYY-MM-DD):"
+
+dob = gets.chomp
+
+age = age_calculator(dob)
+
+puts "Your age is #{age}."
+
